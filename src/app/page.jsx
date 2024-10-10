@@ -13,7 +13,7 @@ export default function Home() {
           priority
         />
 
-        <h1 className="text-4xl font-bold mt-6">Tech Test</h1>
+        <h1 className="text-4xl font-bold mt-6">Tech Testing</h1>
         <h2 className="text-lg">Good luck!</h2>
       </main>
     </div>
