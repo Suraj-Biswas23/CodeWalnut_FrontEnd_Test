@@ -34,13 +34,13 @@ export default function PokemonDetailPage() {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <p className="text-white">Loading...</p>;
+  if (error) return <p className="text-red-500">Error: {error}</p>;
   if (!pokemon) return null;
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Link href="/" className="mb-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 inline-block">
+      <Link href="/" className="mb-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 inline-block">
         Back to List
       </Link>
       <PokemonDetails pokemon={pokemon} />

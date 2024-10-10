@@ -72,62 +72,62 @@ export default function Main() {
       return b.base_experience - a.base_experience;
     });
 
-  return (
-    <main className="container mx-auto px-4 py-8">
-      <div className="mb-6 flex flex-col md:flex-row justify-between items-center">
-        <input
-          type="text"
-          placeholder="Search Pokémon"
-          value={searchTerm}
-          onChange={handleSearch}
-          className="mb-2 md:mb-0 p-2 border rounded"
-        />
-        <div className="flex space-x-2">
-          <select onChange={handleSort} value={sortBy} className="p-2 border rounded">
-            <option value="id">Sort by ID</option>
-            <option value="name">Sort by Name</option>
-            <option value="base_experience">Sort by Base Experience</option>
-          </select>
-          <select onChange={handleFilter} value={filterType} className="p-2 border rounded">
-            <option value="">All Types</option>
-            <option value="grass">Grass</option>
-            <option value="fire">Fire</option>
-            <option value="water">Water</option>
-            {/* Add more type options */}
-          </select>
-        </div>
-      </div>
-      
-      {loading && <p>Loading...</p>}
-      {error && <p className="text-red-500">{error}</p>}
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredAndSortedPokemon.map((pokemon) => (
-          <Link href={`/pokemon/${pokemon.id}`} key={pokemon.id}>
-            <PokemonCard pokemon={pokemon} />
-          </Link>
-        ))}
-      </div>
-      
-      <div className="mt-6 flex justify-center space-x-2">
-        <button
-          type="button"
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300"
-        >
-          Previous
-        </button>
-        <span className="px-4 py-2">Page {currentPage} of {totalPages}</span>
-        <button
-          type="button"
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 bg-blue-500 text-white rounded disabled:bg-gray-300"
-        >
-          Next
-        </button>
-      </div>
-    </main>
-  );
-}
+    return (
+        <main className="container mx-auto px-4 py-8">
+          <div className="mb-6 flex flex-col md:flex-row justify-between items-center">
+            <input
+              type="text"
+              placeholder="Search Pokémon"
+              value={searchTerm}
+              onChange={handleSearch}
+              className="mb-2 md:mb-0 p-2 border rounded bg-gray-800 text-white placeholder-gray-400 border-gray-700"
+            />
+            <div className="flex space-x-2">
+              <select onChange={handleSort} value={sortBy} className="p-2 border rounded bg-gray-800 text-white border-gray-700">
+                <option value="id">Sort by ID</option>
+                <option value="name">Sort by Name</option>
+                <option value="base_experience">Sort by Base Experience</option>
+              </select>
+              <select onChange={handleFilter} value={filterType} className="p-2 border rounded bg-gray-800 text-white border-gray-700">
+                <option value="">All Types</option>
+                <option value="grass">Grass</option>
+                <option value="fire">Fire</option>
+                <option value="water">Water</option>
+                {/* Add more type options */}
+              </select>
+            </div>
+          </div>
+          
+          {loading && <p className="text-white">Loading...</p>}
+          {error && <p className="text-red-500">{error}</p>}
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {filteredAndSortedPokemon.map((pokemon) => (
+              <Link href={`/pokemon/${pokemon.id}`} key={pokemon.id}>
+                <PokemonCard pokemon={pokemon} />
+              </Link>
+            ))}
+          </div>
+          
+          <div className="mt-6 flex justify-center space-x-2">
+            <button
+              type="button"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-700 disabled:text-gray-500"
+            >
+              Previous
+            </button>
+            <span className="px-4 py-2 text-white">Page {currentPage} of {totalPages}</span>
+            <button
+              type="button"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-700 disabled:text-gray-500"
+            >
+              Next
+            </button>
+          </div>
+        </main>
+      );
+    }

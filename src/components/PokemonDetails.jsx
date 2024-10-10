@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function PokemonDetails({ pokemon }) {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 max-w-2xl mx-auto">
+    <div className="bg-gray-800 rounded-lg shadow-md p-6 max-w-2xl mx-auto text-white">
       <div className="flex flex-col md:flex-row items-center mb-6">
         <div className="relative w-48 h-48 mb-4 md:mb-0 md:mr-6">
           <Image
@@ -19,13 +19,13 @@ export default function PokemonDetails({ pokemon }) {
             {pokemon.types.map((type) => (
               <span 
                 key={type.type.name} 
-                className="px-3 py-1 bg-gray-200 rounded-full text-sm"
+                className="px-3 py-1 bg-gray-700 rounded-full text-sm"
               >
                 {type.type.name}
               </span>
             ))}
           </div>
-          <p className="text-gray-600">Base Experience: {pokemon.base_experience}</p>
+          <p className="text-gray-400">Base Experience: {pokemon.base_experience}</p>
         </div>
       </div>
       
@@ -49,7 +49,7 @@ export default function PokemonDetails({ pokemon }) {
                 <span className="capitalize">{stat.stat.name}</span>
                 <span>{stat.base_stat}</span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2.5">
+              <div className="w-full bg-gray-700 rounded-full h-2.5">
                 <div 
                   className="bg-blue-600 h-2.5 rounded-full" 
                   style={{ width: `${(stat.base_stat / 255) * 100}%` }}
