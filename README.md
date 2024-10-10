@@ -15,13 +15,13 @@
 
 2. **Install dependencies:**
 
-   ```bash
+  ```bash
   pnpm install
   ```
 
 3. **Run the development server:**
 
-   ```bash
+  ```bash
   pnpm dev
   ```
 
