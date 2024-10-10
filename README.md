@@ -1,4 +1,4 @@
-# Pokémon Explorer App
+# Pokémon Explorer App [Mid Level]
 
 ## Table of Contents
 - [Setup Instructions](#setup-instructions)
